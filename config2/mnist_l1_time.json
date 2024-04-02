@@ -1,0 +1,39 @@
+{
+    "dataset": "mnist",
+    "max process": 1,
+    "script": [
+        "python3",
+        "ROOT/src/measure_time.py",
+        "JSON"
+    ],
+    "root path": "/media/gtnetuser/SSD_2TB_BEST/LpSubspace",
+    "data file": "data/mnist-train.fvecs",
+    "query file": "data/mnist-test.fvecs",
+    "subspace rank": 9,
+    "number subspaces": 7577,
+    "dimension": 784,
+    "number queries": 100,
+    "norm p": 1,
+    "sample num": 1000,
+    "solver": [
+        "ITER_ALL",
+        "gurobi",
+        "lstsq"
+    ],
+    "projection dimensions": [
+        "ITER_WITH",
+        "solver",
+        {
+            "gurobi": [
+                64,
+                784
+            ],
+            "lstsq": [
+                256,
+                784
+            ]
+        }
+    ],
+    "seed": "RANDOM",
+    "output file": "result/mnist_time/mnist_l1t_pd{projection dimensions}_{solver}.csv"
+}

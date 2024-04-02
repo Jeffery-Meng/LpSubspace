@@ -1,0 +1,50 @@
+{
+    "dataset": "trevi",
+    "max process": 1,
+    "script": [
+        "python3",
+        "ROOT/src/measure_time.py",
+        "JSON"
+    ],
+    "root path": "/media/gtnetuser/SSD_2TB_BEST/LpSubspace",
+    "data file": "data/trevi-train.fvecs",
+    "query file": "data/trevi-test.fvecs",
+    "subspace rank": [
+        "ITER_ALL",
+        4,
+        9,
+        16,
+        32,
+        64,
+        128
+    ],
+    "seed": "RANDOM",
+    "number subspaces": 24775,
+    "dimension": 4096,
+    "number queries": 100,
+    "sample num": 1000,
+    "norm p": 1,
+    "solver": [
+        "ITER_ALL",
+        "gurobi",
+        "lstsq"
+    ],
+    "projection dimensions": [
+        "ITER_WITH",
+        "solver",
+        {
+            "gurobi": [
+                32,
+                64,
+                96,
+                192,
+                4096
+            ],
+            "lstsq": [
+                256,
+                4096
+            ]
+        }
+    ],
+    "output file": "result/trevi_time/trevi_l1t_r{subspace rank}_pd{projection dimensions}_{solver}.csv"
+}

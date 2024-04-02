@@ -1,0 +1,38 @@
+{
+    "dataset": "deep",
+    "max process": 1,
+    "script": [
+        "python3",
+        "ROOT/src/measure_time.py",
+        "JSON"
+    ],
+    "root path": "/media/gtnetuser/SSD_2TB_BEST/LpSubspace",
+    "data file": "data/deep1M.odat",
+    "query file": "data/deep_query.odat",
+    "subspace rank": 9,
+    "seed": "RANDOM",
+    "number subspaces": 111111,
+    "dimension": 96,
+    "number queries": 100,
+    "norm p": 1,
+    "sample num": 1000,
+    "solver": [
+        "ITER_ALL",
+        "gurobi",
+        "lstsq"
+    ],
+    "projection dimensions": [
+        "ITER_WITH",
+        "solver",
+        {
+            "gurobi": [
+                25,
+                96
+            ],
+            "lstsq": [
+                96
+            ]
+        }
+    ],
+    "output file": "result/deep_time/deep_l1t_pd{projection dimensions}_{solver}.csv"
+}

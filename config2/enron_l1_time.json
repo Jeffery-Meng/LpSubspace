@@ -1,0 +1,39 @@
+{
+    "dataset": "enron",
+    "max process": 1,
+    "script": [
+        "python3",
+        "ROOT/src/measure_time.py",
+        "JSON"
+    ],
+    "root path": "/media/gtnetuser/SSD_2TB_BEST/LpSubspace",
+    "data file": "data/enron-train.fvecs",
+    "query file": "data/enron-test.fvecs",
+    "subspace rank": 9,
+    "number subspaces": 10465,
+    "seed": "RANDOM",
+    "dimension": 1369,
+    "number queries": 100,
+    "norm p": 1,
+    "sample num": 1000,
+    "solver": [
+        "ITER_ALL",
+        "gurobi",
+        "lstsq"
+    ],
+    "projection dimensions": [
+        "ITER_WITH",
+        "solver",
+        {
+            "gurobi": [
+                64,
+                1369
+            ],
+            "lstsq": [
+                256,
+                1369
+            ]
+        }
+    ],
+    "output file": "result/enron_time/enron_l1t_pd{projection dimensions}_{solver}.csv"
+}

@@ -1,0 +1,39 @@
+{
+    "dataset": "gist",
+    "max process": 1,
+    "script": [
+        "python3",
+        "ROOT/src/measure_time.py",
+        "JSON"
+    ],
+    "root path": "/media/gtnetuser/SSD_2TB_BEST/LpSubspace",
+    "data file": "data/gist-train.fvecs",
+    "query file": "data/gist_query.odat",
+    "subspace rank": 9,
+    "seed": "RANDOM",
+    "number subspaces": 111111,
+    "dimension": 960,
+    "number queries": 100,
+    "sample num": 1000,
+    "solver": [
+        "ITER_ALL",
+        "gurobi",
+        "lstsq"
+    ],
+    "projection dimensions": [
+        "ITER_WITH",
+        "solver",
+        {
+            "gurobi": [
+                64,
+                960
+            ],
+            "lstsq": [
+                256,
+                960
+            ]
+        }
+    ],
+    "norm p": 1,
+    "output file": "result/gist_time/gist_l1t_pd{projection dimensions}_{solver}.csv"
+}

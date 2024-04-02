@@ -1,0 +1,38 @@
+{
+    "dataset": "sift",
+    "max process": 1,
+    "script": [
+        "python3",
+        "ROOT/src/measure_time.py",
+        "JSON"
+    ],
+    "root path": "/media/gtnetuser/SSD_2TB_BEST/LpSubspace",
+    "data file": "data/sift1M.odat",
+    "query file": "data/sift_query.odat",
+    "subspace rank": 9,
+    "seed": "RANDOM",
+    "number subspaces": 250000,
+    "dimension": 128,
+    "number queries": 100,
+    "sample num": 1000,
+    "norm p": 1.2,
+    "solver": [
+        "ITER_ALL",
+        "adam",
+        "lstsq"
+    ],
+    "projection dimensions": [
+        "ITER_WITH",
+        "solver",
+        {
+            "adam": [
+                25,
+                128
+            ],
+            "lstsq": [
+                128
+            ]
+        }
+    ],
+    "output file": "result/sift_time/sift_l12t_pd{projection dimensions}_{solver}.csv"
+}

@@ -1,0 +1,22 @@
+{
+    "dataset": "enron",
+    "max process": 32,
+    "script": [
+        "python3",
+        "ROOT/src/compute_lp_p2s.py",
+        "JSON"
+    ],
+    "root path": "/media/gtnetuser/SSD_2TB_BEST/LpSubspace",
+    "data file": "data/enron-train.fvecs",
+    "query file": "data/enron-test.fvecs",
+    "query start id": ["ITER_ALL", 1],
+    "subspace rank": 9,
+    "number subspaces": 10465,
+    "seed": ["ITER_RANDOM", 1000],
+    "dimension": 1369,
+    "number queries": 1,
+    "norm p": 1,
+    "sample num": 1000,
+    "projection dimension": 64,
+    "output file": "result/order_preserve/sj_s{seed}_q{query start id}.odat"
+}

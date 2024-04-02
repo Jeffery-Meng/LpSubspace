@@ -1,0 +1,14 @@
+{
+    "root path": "/media/gtnetuser/SSD_2TB_BEST/LpSubspace",
+    "max process": 32,
+    "seed": [
+        "ITER_RANDOM",
+        10000
+    ],
+    "script": [
+        "python3",
+        "ROOT/src/distance_preserving_l1.py",
+        "{seed}",
+        "ROOT/result/dpl1/sift_{seed}.odat"
+    ]
+}
